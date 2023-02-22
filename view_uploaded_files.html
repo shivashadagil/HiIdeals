@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'user_home/css/upload.css' %}">
+    <title>Additional</title>
+    <style>
+        td{
+            height: 150px;
+            width: auto;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    </style>  
+</head>  
+<body>
+    <div class="main-container">
+        <ul>
+            <li><a href="/user_home/user_home" style="font-size: 20px;">Home</a></li>
+        </ul>
+        <h2 class="head2">Important Note: Please do not use same file name for your attachments.</h2>
+        <hr><br>
+        <div class="content">
+            
+            <h3 class="add">UPLOADED DOCUMENTS</h3>
+            <hr><br>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+            <table>
+                <tr>
+                    <td><label for="name">Upload Picture <span>*</span></label></td>
+                    <td> <img src="{{ data_file.profile_picture.url }}" alt="" srcset="">  </td>
+                    <td><label for="name">Upload Signature <span>*</span></label></td>
+                    <td> <img src="{{ data_file.signature.url }}" alt="" srcset="">  </td>
+                </tr>
+                <tr>
+                    <td><label for="name">Upload Class SEVEN(VII) Mark's sheet</label></td>
+                    <td> <img src="{{ data_file.class_seven_marks_sheet.url }}" alt="" srcset="">  </td>
+                    <td><label for="name">Upload SSLC(X) Mark's sheet</label></td>
+                    <td> <img src="{{ data_file.sslc_marks_sheet.url }}" alt="" srcset="">  </td>
+                </tr>
+                <tr>
+                    <td><label for="name">Upload PUC(XII) Mark's sheet</label></td>
+                    <td> <img src="{{ data_file.puc_marks_sheet.url }}" alt="">  </td>
+                    <td><label for="name">Upload Bacheler's Final Year Mark's sheet</label></td>
+                    <td> <img src="{{ data_file.degree_cirtificate.url }}" alt="">  </td>
+                </tr>
+                <tr>
+                    <td><label for="">Upload Master's Final Year Card's</label></td>
+                    <td> <img src="{{ data_file.master_degree_cirtificate.url }}" alt="">  </td>
+                    <td><label for="">Upload Caste Income Certificate</label></td>
+                    <td> <img src="{{ data_file.caste_income_cirtificate.url }}" alt="">  </td>
+                </tr>
+                <tr>
+                    <td><label for="">Upload Rural Certificate</label></td>
+                    <td> <img src="{{ data_file.rural_cirtificate.url }}" alt="">  </td>
+                    <td><label for="">Upload Ex-Servicemen </label></td>
+                    <td> <img src="{{ data_file.ex_servicemen_cirtificate.url }}" alt="">  </td>
+                </tr>
+                <tr>
+                    <td><label for="">Upload Kannada Medium Certificate</label></td>
+                    <td> <img src="{{ data_file.kannada_medium_cirtificate.url }}" alt="">  </td>
+                    <td><label for="">Upload 371j </label></td>
+                    <td> <img src="{{ data_file.cirtificate_375j.url }}" alt="">  </td>
+                </tr>
+                <tr>
+                    <td><label for="">Upload Person with Disability(PWD)</label></td>
+                    <td> <img src="{{ data_file.pwd_cirtificate.url }}" alt="">  </td>
+                    <td><label for="">Upload Experience Certificate </label></td>
+                    <td> <img src="{{ data_file.experience_cirtificate.url }}" alt="">  </td>
+                </tr>
+                
+            </table>
+        </div>
+        <hr>
+        
+        </form>
+    </div>
+</body>
+</html>
